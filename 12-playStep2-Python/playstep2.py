@@ -1,6 +1,6 @@
 # This is the most complicated part. Write the function playstep2(hand, dice) that plays step 2 as
 # explained above. This function takes a hand, which is a 3-digit integer, and it also takes dice,
-# which is an integer containing all the future rolls of the dice. For example, if dice is 5341,
+# which is an integer containing all the future rolls of the dice. For example, if dice is 341,
 # then the next roll will be a 1, then the roll after that will be a 4, then a 3, and finally a 5.
 # Note that in a more realistic version of this game, instead of hard-coding the dice in this way,
 # we'd probably use a random-number generator.
@@ -35,4 +35,59 @@
 
 def playstep2(hand, dice):
 	# your code goes here
-	pass
+	x = [int (a) for a in str(hand)]
+	y = set(x)
+	if len(x) != len(y):
+		if x[0]==x[1]:
+			a = x[0],x[1]
+			b = dice%10
+			dice=dice//10
+			c= []
+			d=[]
+			d=[a[1],a[2],b]
+			d.sort(reverse=True)
+			c.append (int(f"{d[0]}{d[1]}{d[2]}"))
+			c.append(dice)
+			return (tuple(c))
+
+		if x[1]==x[2]:
+			a = x[1],x[2]
+			b = dice%10
+			dice=dice//10
+			c= []
+			d=[]
+			d= [a[0],a[1],b]
+			d.sort(reverse=True)
+			c.append (int(f"{d[0]}{d[1]}{d[2]}"))
+			c.append(dice)
+			return (tuple(c)) 
+		if x[2]==x[0]:
+			a = x[2],x[0]
+			b = dice%10
+			dice=dice//10
+			c= []
+			d=[]
+			d=[a[1],a[2],b]
+			c.append (int(f"{d[0]}{a[1]}{a[2]}"))
+			c.append(dice)			
+			return (tuple(c))
+	else:
+		a=[]
+		r=[]
+		x=max(x)
+		a.append(x)
+		a.append(dice%10)
+		dice = dice//10
+		a.append(dice%10)
+		dice = dice//10
+		a.sort(reverse=True) 
+		r.append(int(f"{a[0]}{a[1]}{a[2]}"))
+		r.append(dice)
+		return (tuple(r))
+
+		
+
+
+
+
+
