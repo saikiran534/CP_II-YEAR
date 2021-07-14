@@ -42,7 +42,7 @@ def playstep2(hand, dice):
 			a = x[0],x[1]
 			b = dice%10
 			dice=dice//10
-			c= []
+			c=[]
 			d=[]
 			d=[a[1],a[2],b]
 			d.sort(reverse=True)
