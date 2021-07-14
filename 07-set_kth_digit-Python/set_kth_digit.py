@@ -7,5 +7,28 @@
 
 
 def fun_set_kth_digit(n, k, d):
-		return 0
+	print(n)
+	x = [int (a) for a in str(n)] #[4,6,8]
+	print(x)
+	if n<0:
+		if(k>(len(x)-1)):
+			return (int(f"{d}{x[0]}{x[1]}{x[2]}"))
+	elif (k>(len(x)-1)):
+
+		return(int(f"{d}{x[0]}{x[1]}{x[2]}"))
+	# else:
+
+
+
+	# a = x[-k:]
+	# b=[]
+	
+	# b.append(int(f"{a[0]}{a[1]}"))
+
+	# print (b[0])
+
+n = -468
+k = 3
+d = 1
+print(fun_set_kth_digit(n, k, d))
 
