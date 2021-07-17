@@ -4,4 +4,23 @@
 
 def mostfrequentdigit(n):
 	# your code goes here
-	pass
+	count = 0 
+
+	n = [int (a) for a in str(n)]
+	
+	num = n[0]
+	l =[]
+	for i in n:
+		counter = n.count(i)
+		
+		if counter>count:
+			count = counter
+			num = i
+		l.append(i)
+		
+		
+	return num
+n=5231123123123
+print(mostfrequentdigit(n))
+		
+	
