@@ -7,7 +7,7 @@ def mostfrequentdigit(n):
 	count = 0 
 
 	n = [int (a) for a in str(n)]
-	
+	n.sort()
 	num = n[0]
 	l =[]
 	for i in n:
