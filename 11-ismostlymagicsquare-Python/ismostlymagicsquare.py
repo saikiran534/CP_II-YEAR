@@ -15,4 +15,40 @@
 
 def ismostlymagicsquare(a):
 	# Your code goes here
-	pass
+	rows = len(a)
+	col = len(a[0])
+	r=[]
+	c=[]
+	for i in range(0,rows):
+		sumRow=0;
+		for j in range(0, col):
+			sumRow=sumRow+a[i][j];
+		r.append(sumRow)
+		
+
+	for i in range(0, rows):
+		sumCol=0;
+		for j in range(0,col):
+			sumCol = sumCol+a[j][i];
+		c.append(sumCol)
+		
+	diag = [a[i][i]for i in range(len(a))]
+	sum1 = sum(diag)
+	print (sum1)
+	diag1 = [row[-i-1] for i,row in enumerate(a)]
+	sum2 = sum(diag1)
+	
+	print(r)
+	print(c)
+	if sum1==sum2 and r==c:
+		return True
+	else: 
+		return False
+	
+
+
+a= ([[1, 2, 3], 
+	 [4, 5, 6], 
+	 [7, 8, 9]])
+
+print(ismostlymagicsquare(a))
