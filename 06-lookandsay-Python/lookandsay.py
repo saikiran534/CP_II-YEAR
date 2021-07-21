@@ -11,4 +11,20 @@
 
 def lookandsay(a):
 	# Your code goes here
-	pass
+	if len(a)==0:
+		return a
+	else:
+		count=0
+		result=[]
+		for i in range(0, (len(a)+1)):
+			if a[i] == a[i+1]:
+				count = count+1
+				result.append(a[i])
+		return count,result
+
+a=[1,1,1]
+print(lookandsay(a))
+
+
+
+	
