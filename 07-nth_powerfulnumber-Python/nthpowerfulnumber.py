@@ -5,50 +5,49 @@
 # For example:- 36 is a powerful number. It is divisible by both 3 and square of 3 i.e, 9.
 
 import math
+ 
+
 def isPowerful(n):
-    power = []
-    res=n
+ 
 
-    while n % 2 == 0:
-        power.append(2)
-        n = n / 2
+    while (n % 2 == 0):
+ 
+        power = 0
+        while (n % 2 == 0):
+         
+            n = n//2
+            power = power + 1
+         
+          
         
+        if (power == 1):
+            return False
+     
   
-    for i in range(3,int(math.sqrt(n))+1,2):
-
-        while n % i== 0:
-            power.append(i),
-            n = n / i
-            
-    
-    if n > 2:
-        print (n)
-    num= set(power)
-    ber=list(num)
-    
-    for i in range (len(ber)):
+    for factor in range(3, int(math.sqrt(n))+1, 2):
+     
         
-        if ((res%ber[i])==0 and (res%(ber[i]**2))==0):
-            
-            return True
-        
-    return False
+        power = 0
+        while (n % factor == 0):
+         
+            n = n//factor
+            power = power + 1
+         
+  
+      
+        if (power == 1):
+            return False
+    return (n == 1)
 
-i=1
-count = 1
-n = 10
-while(True):
-    if(n==0):
-        print(1) 
-    else:
-        a = isPowerful(i)
-        if (a==True):
-            print(i,a)
-            count = count+1
-    if (count == n):
-        print(i)
-        break
-    i = i+1
+def nthpowerfulnumber(n):
+    p,q=0,0
+    while p<=n:
+        q+=1
+        if (isPowerful(q)):
+            p+=1
+    return q
+
+
 
 
 
