@@ -7,4 +7,8 @@
 
 def digitcount(n):
 	# your code goes here
-	pass
+	n = abs(n)
+	x = [int (a) for a in str(n)]
+	return len(x)
+
+	
