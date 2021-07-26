@@ -8,5 +8,14 @@
 
 
 def fun_interleave(s1,s2):
+	x=[str(a) for a in str(s1)]
+	y=[str(a) for a in str(s2)]
+	print(x)
+	print(y)
+	a=[]
+	for i,j in range(x,y):
+		a =[x[i]+y[j]]
+	print (a) 
 	return ""
-	
+s1,s2=("pto","yhn")
+print(fun_interleave(s1,s2))
