@@ -16,7 +16,32 @@
 # assert(ishappynumber(98) == False)
 # assert(ishappynumber(404) == True)
 # assert(ishappynumber(405) == False)
-
+def square(n):
+	sum = 0
+	while(n>0):
+		sum = sum+(n%10)*(n%10)
+		n = int(n/10)
+	print(sum)
+	return sum
 def ishappynumber(n):
+	a = n
+	b=n
+	if n==0:
+		return False
+	
+	while (True):
+		a = square(n)
+		b = square(square(n))
+		print(a,b)
+
+		if a!=b:
+			return False
+		else:
+			return True
+	return True
 	# your code goes here
-	pass
+
+n = 404
+
+#print(square(n))
+print(ishappynumber(n))
