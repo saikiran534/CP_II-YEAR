@@ -6,19 +6,27 @@
 
 def isrotated(str1, str2):
 	#Your code goes here
-	x = [str(a) for a in str(str1)]
-	y = [str (a) for a in str(str2)]
-	if len(x)==len(y):
-		a = len(x)
-	
-	# print (len(x))
-	# print(x[::-1])
-		if y == x[::-1]:
-			return True
-		else:
-			return False
+	a = ""
+	if len(str1)!=len(str2):
+		return False
+	a = str1+str1
+	if str2 in a:
+		return True
 	else:
 		return False
+	# x = [str(a) for a in str(str1)]
+	# y = [str (a) for a in str(str2)]
+	# if len(x)==len(y):
+	# 	a = len(x)
+	
+	# # print (len(x))
+	# # print(x[::-1])
+	# 	if y == x[::-1]:
+	# 		return True
+	# 	else:
+	# 		return False
+	# else:
+	# 	return False
 	
 str1="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 str2 = "BCDEFGHIJKLMNOPQRSTUVWXYZA"
