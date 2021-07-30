@@ -6,19 +6,23 @@
 # the list.
 
 def issorted(a):
-
-    
     flag=0
+    b =0
     i=1
     while i<len(a):
-        if(a[i] < a[i - 1] ):
+        if(a[i] < a[i - 1]):
             flag = 1
         
+        elif(a[i-1] < a[i]): 
+            a =1
         i += 1
+        
+
     # your code goes here
-    if (not flag or len(a)==0):
+    if (not flag or not b or len(a)==0):
         return True
     else:
         return False
 a =[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 print(issorted(a))
+
