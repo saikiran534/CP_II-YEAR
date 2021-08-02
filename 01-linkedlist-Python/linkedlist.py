@@ -19,13 +19,14 @@ class LinkedList(object):
         
     def append(self, new_element):
         # Your code goes here
-        if (self.head==None): 
-            head = new_element
-        else: 
+        
+        if(self.head!=None): 
             temp = self.head
             while (temp.next!=None): 
-                temp= temp.next
+                temp = temp.next
             temp.next = new_element
+        else: 
+            head = new_element
             
     def get_position(self, position):
         """Get an element from a particular position.
@@ -33,11 +34,18 @@ class LinkedList(object):
         Return "None" if position is not in the list."""
         # Your code goes here
         temp = self.head
+        count = 1
+
         
         if(self.head==None): 
             return None
         else: 
-
+            while(temp!=None and count<position):
+                temp=temp.next
+                count=count+1
+            if count == position: 
+                return temp
+            return None
     
     def insert(self, new_element, position):
         """Insert a new node at the given position.
@@ -45,10 +53,32 @@ class LinkedList(object):
         Inserting at position 3 means between
         the 2nd and 3rd elements."""
         # Your code goes here
-        pass
+        temp = self.head
+        count = 1
+        head = self.head
+        if (position ==1): 
+            new_element.next= head
+            head = new_element
+        else:
+            while (temp.head!= None and count < position-1): 
+                temp= temp.next
+                count =count+1
+                
+            new_element.next=temp.next
+            temp.next=new_element
+
     
     
     def delete(self, value):
         """Delete the first node with a given value."""
         # Your code goes here
-        pass
+        temp=self.head
+        count = 1
+        if (self.head!=None): 
+            if (temp.value==value): 
+                self.head=self.head.next
+            else: 
+                while(temp.next.next!= None) and (temp.next.value!=value): 
+                    temp=temp.next
+                    count =count+1
+                temp.next = temp.next.next
