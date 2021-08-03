@@ -8,5 +8,26 @@
 # Also the function returns the empty list if the original list is empty. 
 # Remember to not use strings. You may not use loops/iteration in this problem.
 
+def getEven(n,i=0,x=0): 
+	if n == 0 : 
+		return x
+	else: 
+		remove = n%10
+		if remove%2 ==0:
+			x = x+remove*(10**(i))
+			i=i+1
+		return getEven(n//10, i, x) 
+
+
+def onlyeven(l,r=[]): 
+	if(l==[]): 
+		return r
+	else: 
+		r.append(getEven(l[0]))
+		return onlyeven(l[1:],r)
 def fun_recursion_onlyevendigits(l): 
+	if (l ==[]): 
 		return []
+	return onlyeven(l,[])
+
+	
